@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+const cred={
+    email:"test@gmail.com",
+    password:"abc123",
 
+}
+    
 export default function Signin() {
+    const navigate= useNavigate();
+    const [email, setemail] = useState("");
+    const [password, setpassword]= useState("");
+    const handleSelectChange1 = (event) => {
+        setemail(event.target.value);
+      };
+      const handleSelectChange2 = (event) => {
+        setpassword(event.target.value);
+      };
     return (
       <>
         {/*
@@ -36,6 +51,7 @@ export default function Signin() {
                     type="email"
                     autoComplete="email"
                     required
+                    onChange={handleSelectChange1}
                     className="w-full bg-secondary bg-opacity-40 rounded border focus:bg-gray-200 focus:ring-2 focus:ring-primary text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
@@ -57,6 +73,7 @@ export default function Signin() {
                     id="password"
                     name="password"
                     type="password"
+                    onChange={handleSelectChange2}
                     autoComplete="current-password"
                     required
                     className="w-full bg-secondary bg-opacity-40 rounded border focus:bg-gray-200 focus:ring-2 focus:ring-primary text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -67,6 +84,7 @@ export default function Signin() {
               <div>
                 <button
                   type="submit"
+                  onSubmit={email==cred.email && password== cred.password ? navigate("/Dashboard_client") : ""}
                   className="flex w-full justify-center rounded-md bg-secondary px-3 py-1.5 text-sm font-semibold leading-6 text-amber-100 shadow-sm  hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
                 >
                   Sign in

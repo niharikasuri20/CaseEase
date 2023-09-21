@@ -9,6 +9,8 @@ import Faq from "./views/Faq";
 import Contactus from "./views/Contactus";
 import Signin from "./views/SignIn";
 import Registration from "./views/Registration";
+import CaseApplication from "./views/CaseApplication";
+import Dashboard_client from "./views/Dashboard_client";
 
 // src/App.jsx
 function App() {
@@ -24,6 +26,8 @@ function App() {
       <Route exact path="/contactUs" element={<Contactus />} />
       <Route exact path="/Signin" element={<Signin />} />
       <Route exact path="/Registration" element={<Registration />} />
+      <Route exact path="/CaseApplication" element={<CaseApplication />} />
+      <Route exact path="/Dashboard_client" element={<Dashboard_client />} />
       </Routes>
       <Footer/>
     </div>

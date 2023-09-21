@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const About = () => {
   return (
@@ -11,15 +12,15 @@ const About = () => {
             CaseEase is a web-based platform that provides a seamless and user-friendly experience for clients to connect with lawyers. Whether you need legal advice, representation, or assistance with legal documents, CaseEase is here to help. Our platform simplifies the process of finding and hiring a lawyer, making it accessible to everyone.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <Link
+                to="/SignIn"
                 className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Get started
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-secondary">
+              </Link>
+              <Link to="/Features" className="text-sm font-semibold leading-6 text-secondary">
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </Link>
             </div>
           </div>
       </div>
